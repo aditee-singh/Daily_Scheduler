@@ -91,10 +91,9 @@ function myFunction(){
     document.getElementById("list").style.display = "block";
     // txt =  person ;
   }
-  demo = document.querySelector("#tasks");
-  demo.innerHTML = txt;
+  // demo = document.querySelector("#tasks");
+  // demo.innerHTML = txt;
 
   // document.getElementById("tasks").innerHTML = txt;
-
 }
   
