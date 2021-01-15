@@ -44,9 +44,9 @@ for( let x = firstDayIndex; x > 0; x--){
 
 for (let i = 1; i <= lastDay; i++){
     if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-      days += `<div class="today">${i}</div>`;
+      days += `<div id="${i}" onclick="myFunction()" class="today">${i}</div>`;
     } else {
-      days += `<div>${i}</div>`;
+      days += `<div id="${i}">${i}</div>`;
     }
   }
 
@@ -69,4 +69,32 @@ document.querySelector(".prev").addEventListener("click", () => {
   });
   
   renderCalendar();
+
+function myFunction(){
+  console.log("hi");
+  var txt;
+  var person = prompt("Enter a task:", "");
+  if (person == null || person == "") {
+    txt = "No task.";
+  } else {
+    txt = person;
+    console.log(txt);
+    var node = document.createElement("div");
+    console.log(node);
+    var textnode = document.createTextNode(txt);
+    console.log(node);
+    
+    node.appendChild(textnode);
+    document.getElementById("tasks").appendChild(node);
+
+    // txt = `<div>${person}</div>`
+    document.getElementById("list").style.display = "block";
+    // txt =  person ;
+  }
+  demo = document.querySelector("#tasks");
+  demo.innerHTML = txt;
+
+  // document.getElementById("tasks").innerHTML = txt;
+
+}
   
