@@ -127,9 +127,12 @@
   }
   .header h1{
     justify-content: center;
-    margin-left: 65px;
+    margin-left: 50px;
   }
   #tasks{
     margin-left: 15px;
     margin-top: 20px;
+  }
+  #tasks li{
+    margin-left: 10px;
   }
