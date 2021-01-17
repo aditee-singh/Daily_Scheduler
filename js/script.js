@@ -72,11 +72,6 @@ document.querySelector(".prev").addEventListener("click", () => {
 
 function myFunction(demo){
 
-  // console.log("hi");
-  // var node1 = document.createElement("div");
-  // var textnode1 = document.createTextNode("");
-  // node1.appendChild(textnode1);
-  // document.getElementById("header").appendChild(node1);
 
   var txt;
   var person = prompt("Enter a task:", "");
