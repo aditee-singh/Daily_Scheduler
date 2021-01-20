@@ -1,5 +1,9 @@
 const date = new Date();
 
+$(document).ready(function(){
+  $("#list").hide();
+})
+
 const renderCalendar = () =>{
   date.setDate(1);
   // console.log(date.getDay());
@@ -44,7 +48,7 @@ const renderCalendar = () =>{
 
   for (let i = 1; i <= lastDay; i++){
       if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-        days += `<div id="${i}" onclick="myFunction(${i})" class="today">${i}</div>`;
+        days += `<div id="${i}" class="today">${i}</div>`;
       } else {
         days += `<div id="${i}" onclick="myFunction(${i})">${i}</div>`;
       }
@@ -58,22 +62,34 @@ const renderCalendar = () =>{
 }
 // date.setMonth(5);
 
-document.querySelector(".prev").addEventListener("click", () => {
+// document.querySelector(".prev").addEventListener("click", () => {
+//     date.setMonth(date.getMonth() - 1);
+//     renderCalendar();
+//   });
+
+
+  $(".prev").on("click",function(){
     date.setMonth(date.getMonth() - 1);
-    renderCalendar();
-  });
-  
-  document.querySelector(".next").addEventListener("click", () => {
+     renderCalendar();
+  })
+
+  $(".next").on("click",function(){
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
   });
+
+  // document.querySelector(".next").addEventListener("click", () => {
+    
+  // });
   
   renderCalendar();
 
-function myFunction(demo){
 
 
-  var txt;
+  $(".today").on("click", function(){
+    $("#list").show();
+
+    var txt;
   var person = prompt("Enter a task:", "");
   if (person == null || person == "") {
     txt = "No task.";
@@ -88,9 +104,15 @@ function myFunction(demo){
     node.appendChild(textnode);
     document.getElementById("tasks").appendChild(node);
 
-    document.getElementById("list").style.display = "block";
-  }
-}
 
+
+    // document.getElementById("list").style.display = "block";
+  }
+
+
+    // console.log("hi");
+    
+  });
+  
 
   
